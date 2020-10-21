@@ -21,6 +21,7 @@ router.post ("/" , async (req, res) => {
     const newTask = new task;
     newTask.title = req.body.title;
     newTask.checked = req.body.checked
+    newTask.editable = req.body.editable
    const result = await newTask.save();
    res.send(result);
 })
