@@ -5,8 +5,7 @@ const taskRouter = require ("./Routes/task");
 
 const app = express();
 
-var dbString = process.env.DB_CONNECTION_STRING;
-dbString = "mongodb+srv://mohammed:mohammedVX7@cluster0.bc4kp.mongodb.net/tasks?retryWrites=true&w=majority"
+const dbString = process.env.DB_CONNECTION_STRING;
 
 mongoose.connect(dbString, { useNewUrlParser: true, useFindAndModify: false, useUnifiedTopology: true }, (err) => {
     if (err) {
@@ -18,7 +17,7 @@ mongoose.connect(dbString, { useNewUrlParser: true, useFindAndModify: false, use
 
 app.use(bodyParser.json());
 app.get("/" , (req,res)=> {
-    res.send("Welcome to H4I onboarding task");
+    res.send("Welcome to Mohamed and Silvi's very cool app");
 })
 
 app.use("/api/task", taskRouter);
